@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Custom Root Scratch Files
+/*.ps1
+/*.txt
+/*.docx
+/*.js
+!/hardhat.config.js
+!/postcss.config.js
+/*.html
+/*.zip
+/*.mmd
+/toc_items.json
+/*.xml
+!/BBREMS_Final_Report.docx
+!/Patent_Report.docx
+!/Indian_Patent_Report_Final.docx
+
+# Custom Extraction Caches
+/cache/
+/extract_docx/
+/extracted_docx/
