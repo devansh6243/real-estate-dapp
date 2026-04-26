@@ -29,6 +29,7 @@ interface Web3ContextType {
   contract:      ethers.Contract | null;
   chainId:       number | null;
   isCorrectNetwork: boolean;
+  networkName:   string;
   connectWallet:    () => Promise<void>;
   switchNetwork:    () => Promise<void>;
   isLoading:     boolean;
@@ -194,6 +195,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
     const onChain = async (chainIdHex: string) => {
       const cid = parseInt(chainIdHex, 16);
       setChainId(cid);
+      const bp = new ethers.BrowserProvider(eth);
       if (ACCEPTED_CHAINS.includes(cid)) await buildContract(bp);
       else setContract(null);
     };
